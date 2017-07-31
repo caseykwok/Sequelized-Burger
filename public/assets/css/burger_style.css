@@ -51,6 +51,8 @@ button.list-group-item.list-group-item-action.undevoured-labels:hover {
 
 #form-row {
 	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 #burger, #order-for {
@@ -62,13 +64,14 @@ button.list-group-item.list-group-item-action.undevoured-labels:hover {
 }
 
 .order-inputs {
-	margin-right: 20px;
+	margin-right: 5px;
 }
 
 #form-input-error{
 	color: #a94442;
 	display: none;
-	font-size: 12px;
+	font-family: "Delius Unicase", cursive;
+	font-size: 10px;
 	margin-top: 5px;
 }
 
