@@ -1,0 +1,86 @@
+.navbar-default {
+	background-color: #2c2c2d;
+	color: #fcfbe3;
+	font-family: "Bowlby One SC", cursive;
+}
+
+#header {
+	margin-bottom: 10px;
+	margin-top: 15px;
+}
+
+#logo {
+	margin-bottom: 5px;
+}
+
+#undevoured-title, #devoured-title {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: "Delius Unicase", cursive;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.display-order-name {
+	font-style: italic;
+	font-size: 10px;
+}
+
+/*Need to specify this exact location because font color will not change if simply do .undevoured-labels*/
+button.list-group-item.list-group-item-action.undevoured-labels.undevoured-labels {
+	background-color: #faab3e;
+	border: 1px solid #a33815;
+	color: #2c2c2d;
+	font-family: "Delius Unicase", cursive;
+	font-weight: normal;
+}
+
+/*Need to specify this exact location because hover CSS will not apply if simply do .undevoured-labels*/
+button.list-group-item.list-group-item-action.undevoured-labels:hover {
+	background-color: #a33815;
+	color: #ffffff;
+	font-weight: 550px;
+}
+
+.devoured-labels {
+	background-color: #fcfbe3;
+	border: 1px solid #a33815;
+	color: #696969;
+	font-family: "Delius Unicase", cursive;
+}
+
+#form-row {
+	margin-top: 20px;
+}
+
+#burger, #order-for {
+	border: 1px solid #2c2c2d;;
+}
+
+.order-labels, input[type="text"] {
+	font-family: "Delius Unicase", cursive;
+}
+
+.order-inputs {
+	margin-right: 20px;
+}
+
+#form-input-error{
+	color: #a94442;
+	display: none;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+#submit {
+	background-color: #2c2c2d;
+	border: 1px solid #2c2c2d;;
+	color: #fcfbe3;	
+	font-family: "Delius Unicase", cursive;
+}
+
+#submit:hover {
+	background-color: #a33815;
+	color: #ffffff;
+	font-weight: 550px;
+}

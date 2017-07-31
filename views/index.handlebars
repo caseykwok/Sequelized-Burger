@@ -1,0 +1,82 @@
+<nav class="navbar navbar-default">
+	<div class="container">
+		<h1 id="header">
+			<img id="logo" src="static/assets/images/burger2.png" alt="Burger" height="55"> Eat-Dat-Burger!
+		</h1>
+	</div>
+</nav>
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-md-1"></div>
+		<div class="col-md-5">
+			<h3 id="undevoured-title">Orders In Progress <i class="fa fa-spinner" aria-hidden="true"></i></h3>
+			<ul class="list-group">
+				{{#each all}}
+					{{#unless this.devoured}}
+						<form class="form-inline" method="POST" action="/{{this.id}}?_method=PUT">
+							<button class="list-group-item list-group-item-action undevoured-labels" type="submit">
+								Order #{{this.id}}: {{this.burgerName}} <span class="display-order-name">for {{this.customer.customerName}}</span>
+							</button>
+						</form>
+					{{/unless}}
+				{{/each}}
+			</ul>
+		</div>
+		<div class="col-md-5">
+			<h3 id="devoured-title">Orders Completed <i class="fa fa-cutlery" aria-hidden="true"></i></h3>
+			<ul class="list-group">
+				{{#each all}}
+					{{#if this.devoured}}
+						<li class="list-group-item devoured-labels">
+							Order #{{this.id}}: {{this.burgerName}} <span class="display-order-name">for {{this.customer.customerName}}</span>
+						</li>
+					{{/if}}
+				{{/each}}	
+			</ul>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+
+	<div class="row" id="form-row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<form class="form-inline" method="POST" action="/" onsubmit="return validateForm()">
+				<div class="form-group">
+					<label for="burger" class="order-labels">Burger</label>
+					<input type="text" class="form-control order-inputs" id="burger" name="burgerName" placeholder="Burger">
+				</div>
+				<div class="form-group">
+					<label for="order-for" class="order-labels">Order For</label>
+					<input type="text" class="form-control order-inputs" id="order-for" name="customerName" placeholder="Name">
+				</div>
+				<button type="submit" class="btn btn-primary" id="submit" type="submit">Order <i class="fa fa-credit-card" aria-hidden="true"></i></button>
+			</form>
+			<div id="form-input-error"></div>
+		</div>
+		<div class="col-md-2"></div>
+	</div>	
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+	function validateForm() {
+		let valid = true;
+		if (!$("#burger").val() && !$("#order-for").val()) {
+			$("#form-input-error").text("* Please enter a burger and a name for your order.");
+			$("#form-input-error").show();
+			valid = false;
+		} else if (!$("#burger").val()) {
+			$("#form-input-error").text("* Please enter the burger you would like to order.");
+			$("#form-input-error").show();
+			valid = false; 
+		} else if (!$("#order-for").val()) {
+			$("#form-input-error").text("* Please enter a name for your order.");
+			$("#form-input-error").show();
+			valid = false;
+		};
+		return valid;
+	};
+</script>
