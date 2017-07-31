@@ -58,7 +58,7 @@ There are two ways to run this application. The user can either run the applicat
 <a name="heroku"></a>
 ### Heroku
 
-1. Open the browser and go to the [deployed Heroku application](https://serene-hamlet-29918.herokuapp.com/) to reach the homepage.
+1. Open the browser and go to the [deployed Heroku application](https://evening-castle-57902.herokuapp.com/) to reach the homepage.
 
 	- **Note:** It is unnecessary to complete the two steps in [Installation](#installation).
 
